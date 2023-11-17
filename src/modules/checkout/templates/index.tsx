@@ -19,13 +19,13 @@ const CheckoutTemplate = () => {
               <>
                 <ChevronDown className="rotate-90" size={16} />
                 <span className="mt-px hidden small:block">
-                  Back to shopping cart
+                Повернутися до кошика
                 </span>
-                <span className="mt-px block small:hidden">Back</span>
+                <span className="mt-px block small:hidden">Назад</span>
               </>
             </Link>
             <Link href="/" className="text-xl-semi">
-              ACME
+              Tandem Textile
             </Link>
             <div className="flex-1 basis-0" />
           </nav>

@@ -148,7 +148,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
       </div>
 
       <Modal isOpen={state} close={close}>
-        <Modal.Title>Edit address</Modal.Title>
+        <Modal.Title>Редагувати адресу</Modal.Title>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="grid grid-cols-2 gap-x-2">

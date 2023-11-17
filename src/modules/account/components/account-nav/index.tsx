@@ -18,7 +18,7 @@ const AccountNav = () => {
           >
             <>
               <ChevronDown className="transform rotate-90" />
-              <span>Account</span>
+              <span>Обліковий запис</span>
             </>
           </Link>
         )}
@@ -26,33 +26,33 @@ const AccountNav = () => {
       <div className="hidden small:block">
         <div>
           <div className="py-4">
-            <h3 className="text-base-semi">Account</h3>
+            <h3 className="text-base-semi">Обліковий запис</h3>
           </div>
           <div className="text-base-regular">
             <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
               <li>
                 <AccountNavLink href="/account" route={route!}>
-                  Overview
+                Огляд
                 </AccountNavLink>
               </li>
               <li>
                 <AccountNavLink href="/account/profile" route={route!}>
-                  Profile
+                Обліковий запис
                 </AccountNavLink>
               </li>
               <li>
                 <AccountNavLink href="/account/addresses" route={route!}>
-                  Addresses
+                Адреси
                 </AccountNavLink>
               </li>
               <li>
                 <AccountNavLink href="/account/orders" route={route!}>
-                  Orders
+                Замовлення
                 </AccountNavLink>
               </li>
               <li className="text-grey-700">
                 <button type="button" onClick={handleLogout}>
-                  Log out
+                Вийти
                 </button>
               </li>
             </ul>

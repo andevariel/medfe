@@ -2,7 +2,7 @@ import CheckoutTemplate from "@modules/checkout/templates"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Checkout",
+  title: "Оформлення заказу",
 }
 
 export default function Checkout() {

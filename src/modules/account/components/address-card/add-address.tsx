@@ -89,64 +89,64 @@ const AddAddress: React.FC = () => {
         className="border border-gray-200 p-5 min-h-[220px] h-full w-full flex flex-col justify-between"
         onClick={open}
       >
-        <span className="text-base-semi">New address</span>
+        <span className="text-base-semi">Нова адреса</span>
         <Plus size={24} />
       </button>
 
       <Modal isOpen={state} close={handleClose}>
-        <Modal.Title>Add address</Modal.Title>
+        <Modal.Title>Додати адресу</Modal.Title>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="Ім'я"
                 {...register("first_name", {
-                  required: "First name is required",
+                  required: "Потрібно ввести ім'я",
                 })}
                 required
                 errors={errors}
                 autoComplete="given-name"
               />
               <Input
-                label="Last name"
+                label="Прізвище"
                 {...register("last_name", {
-                  required: "Last name is required",
+                  required: "Потрібно ввести прізвище",
                 })}
                 required
                 errors={errors}
                 autoComplete="family-name"
               />
             </div>
-            <Input label="Company" {...register("company")} errors={errors} />
+            <Input label="Компанія" {...register("company")} errors={errors} />
             <Input
-              label="Address"
+              label="Адреса"
               {...register("address_1", {
-                required: "Address is required",
+                required: "Необхідно вказати адресу",
               })}
               required
               errors={errors}
               autoComplete="address-line1"
             />
             <Input
-              label="Apartment, suite, etc."
+              label="Квартира, кабінет і т. д"
               {...register("address_2")}
               errors={errors}
               autoComplete="address-line2"
             />
             <div className="grid grid-cols-[144px_1fr] gap-x-2">
               <Input
-                label="Postal code"
+                label="Поштовий індекс"
                 {...register("postal_code", {
-                  required: "Postal code is required",
+                  required: "Поштовий індекс обов'язковий",
                 })}
-                required
+                // required
                 errors={errors}
                 autoComplete="postal-code"
               />
               <Input
-                label="City"
+                label="Місто"
                 {...register("city", {
-                  required: "City is required",
+                  required: "Необхідно вказати місто",
                 })}
                 errors={errors}
                 required
@@ -154,7 +154,7 @@ const AddAddress: React.FC = () => {
               />
             </div>
             <Input
-              label="Province / State"
+              label="Область"
               {...register("province")}
               errors={errors}
               autoComplete="address-level1"
@@ -164,7 +164,7 @@ const AddAddress: React.FC = () => {
               autoComplete="country"
             />
             <Input
-              label="Phone"
+              label="Телефон"
               {...register("phone")}
               errors={errors}
               autoComplete="phone"
@@ -179,10 +179,10 @@ const AddAddress: React.FC = () => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={handleClose}
           >
-            Cancel
+            Скасувати
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+          Зберегти
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

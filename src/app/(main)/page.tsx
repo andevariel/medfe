@@ -1,11 +1,12 @@
 import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
+import SimpleSlider from "@modules/home/components/slider";
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Інтернет Магазин Тандем Текстиль",
   description:
-    "Shop all available models only at the ACME. Worldwide Shipping. Secure Payment.",
+    "Придбайте всі доступні ексклюзивні коллекції лише в Тандем Текстиль.",
 }
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     <>
       <Hero />
       <FeaturedProducts />
+      <SimpleSlider />
     </>
   )
 }

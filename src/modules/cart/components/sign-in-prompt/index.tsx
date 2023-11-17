@@ -5,14 +5,14 @@ const SignInPrompt = () => {
   return (
     <div className="bg-white flex items-start justify-between">
       <div>
-        <h2 className="text-xl-semi">Already have an account?</h2>
+        <h2 className="text-xl-semi">Вже маєте обліковий запис?</h2>
         <p className="text-base-regular text-gray-700 mt-2">
-          Sign in for a better experience.
+        Авторизуйтесь для отримання розширених можливостей.
         </p>
       </div>
       <div>
         <Link href="/account/login">
-          <Button variant="secondary">Sign in</Button>
+          <Button variant="secondary">Вхід</Button>
         </Link>
       </div>
     </div>

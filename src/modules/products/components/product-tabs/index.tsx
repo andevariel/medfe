@@ -15,11 +15,11 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Product Information",
+        label: "Інформація про продукт",
         component: <ProductInfoTab product={product} />,
       },
       {
-        label: "Shipping & Returns",
+        label: "Доставка та повернення",
         component: <ShippingInfoTab />,
       },
     ]
@@ -106,14 +106,13 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Швидка доставка</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+            Ваша тканина прибуде протягом 1-2 робочих днів.
             </p>
           </div>
         </div>
-        <div className="flex items-start gap-x-2">
+        {/* <div className="flex items-start gap-x-2">
           <Refresh />
           <div>
             <span className="font-semibold">Simple exchanges</span>
@@ -122,8 +121,8 @@ const ShippingInfoTab = () => {
               product for a new one.
             </p>
           </div>
-        </div>
-        <div className="flex items-start gap-x-2">
+        </div> */}
+        {/* <div className="flex items-start gap-x-2">
           <Back />
           <div>
             <span className="font-semibold">Easy returns</span>
@@ -133,7 +132,7 @@ const ShippingInfoTab = () => {
               is hassle-free.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </Tab.Panel>
   )

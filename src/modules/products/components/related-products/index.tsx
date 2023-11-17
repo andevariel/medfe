@@ -57,10 +57,10 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
         <span className="text-base-regular text-gray-600 mb-6">
-          Related products
+        Схожі тканини
         </span>
         <p className="text-2xl-regular text-gray-900 max-w-lg">
-          You might also want to check out these products.
+        Можливо, вам також буде цікаво переглянути ці тканини.
         </p>
       </div>
 
@@ -91,7 +91,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
             onClick={() => fetchNextPage()}
             className="w-72"
           >
-            Load more
+            Завантажити ще
           </Button>
         </div>
       )}

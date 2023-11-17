@@ -68,9 +68,9 @@ const Overview = ({ orders, customer }: OverviewProps) => {
 
       <div className="hidden small:block">
         <div className="text-xl-semi flex justify-between items-start mb-4">
-          <span>Hello {customer?.first_name}</span>
+          <span>Привіт {customer?.first_name}</span>
           <span className="text-small-regular text-gray-700">
-            Signed in as:{" "}
+          Увійшли як:{" "}
             <span className="font-semibold">{customer?.email}</span>
           </span>
         </div>
@@ -84,19 +84,19 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                     {getProfileCompletion(customer)}%
                   </span>
                   <span className="uppercase text-base-regular text-gray-500">
-                    Completed
+                  Завершено
                   </span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Addresses</h3>
+                <h3 className="text-large-semi">Адреси</h3>
                 <div className="flex items-end gap-x-2">
                   <span className="text-3xl-semi leading-none">
                     {customer?.shipping_addresses?.length || 0}
                   </span>
                   <span className="uppercase text-base-regular text-gray-500">
-                    Saved
+                  Збережено
                   </span>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
 
             <div className="flex flex-col gap-y-4">
               <div className="flex items-center gap-x-2">
-                <h3 className="text-large-semi">Recent orders</h3>
+                <h3 className="text-large-semi">Останні замовлення</h3>
               </div>
               <ul className="flex flex-col gap-y-4">
                 {orders ? (
@@ -114,12 +114,12 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                         <Link href={`/order/details/${order.id}`}>
                           <div className="bg-gray-50 flex justify-between items-center p-4">
                             <div className="grid grid-cols-3 grid-rows-2 text-small-regular gap-x-4 flex-1">
-                              <span className="font-semibold">Date placed</span>
+                              <span className="font-semibold">Дата розміщення</span>
                               <span className="font-semibold">
-                                Order number
+                              Номер замовлення
                               </span>
                               <span className="font-semibold">
-                                Total amount
+                              Загальна сума
                               </span>
                               <span>
                                 {new Date(order.created_at).toDateString()}
@@ -138,7 +138,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                               onClick={close}
                             >
                               <span className="sr-only">
-                                Go to order #{order.display_id}
+                              Перейти до замовлення #{order.display_id}
                               </span>
                               <ChevronDown className="-rotate-90" />
                             </button>
@@ -148,7 +148,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                     )
                   })
                 ) : (
-                  <span>No recent orders</span>
+                  <span>Немає останніх замовлень</span>
                 )}
               </ul>
             </div>

@@ -92,10 +92,10 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            Відмінити
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+          Зберегти
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>
