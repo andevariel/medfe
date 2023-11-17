@@ -135,7 +135,7 @@ const AddAddress: React.FC = () => {
             />
             <div className="grid grid-cols-[144px_1fr] gap-x-2">
               <Input
-                label="Поштовий індекс"
+                label="Індекс"
                 {...register("postal_code", {
                   required: "Поштовий індекс обов'язковий",
                 })}
