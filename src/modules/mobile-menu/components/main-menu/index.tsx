@@ -52,7 +52,7 @@ const MainMenu = () => {
             onClick={setScreenSearch}
           >
             <Search size={24} />
-            <span placeholder="Search products" className="text-base-regular">
+            <span placeholder="Пошук тканин" className="text-base-regular">
               Пошук тканин
             </span>
           </button>

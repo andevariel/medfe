@@ -16,7 +16,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
     <div>
       <div className="small:hidden">
         <div className="text-xl-semi mb-4 px-8">
-          Hello {customer?.first_name}
+        Привіт {customer?.first_name}
         </div>
         <div className="text-base-regular">
           <ul>
@@ -28,7 +28,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <>
                   <div className="flex items-center gap-x-2">
                     <User size={16} />
-                    <span>Profile</span>
+                    <span>Обліковий запис</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </>
@@ -42,7 +42,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <>
                   <div className="flex items-center gap-x-2">
                     <MapPin size={16} />
-                    <span>Addresses</span>
+                    <span>Адреси</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </>
@@ -56,7 +56,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
                 <>
                   <div className="flex items-center gap-x-2">
                     <Package size={16} />
-                    <span>Orders</span>
+                    <span>Закази</span>
                   </div>
                   <ChevronDown className="transform -rotate-90" />
                 </>
@@ -78,7 +78,7 @@ const Overview = ({ orders, customer }: OverviewProps) => {
           <div className="flex flex-col gap-y-4 h-full col-span-1 row-span-2 flex-1">
             <div className="flex items-start gap-x-16 mb-6">
               <div className="flex flex-col gap-y-4">
-                <h3 className="text-large-semi">Profile</h3>
+                <h3 className="text-large-semi">Обліковий запис</h3>
                 <div className="flex items-end gap-x-2">
                   <span className="text-3xl-semi leading-none">
                     {getProfileCompletion(customer)}%

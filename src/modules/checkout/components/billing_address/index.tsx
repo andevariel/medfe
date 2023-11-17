@@ -10,18 +10,18 @@ const BillingAddress = () => {
         <div className="grid grid-cols-1 gap-y-2">
           <div className="grid grid-cols-2 gap-x-2">
             <Input
-              label="First name"
+              label="Ім'я"
               {...register("billing_address.first_name", {
-                required: "First name is required",
+                required: "Потрібно ввести ім'я",
               })}
               autoComplete="given-name"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Last name"
+              label="Прізвище"
               {...register("billing_address.last_name", {
-                required: "Last name is required",
+                required: "Потрібно ввести прізвище",
               })}
               autoComplete="family-name"
               errors={errors}
@@ -29,23 +29,23 @@ const BillingAddress = () => {
             />
           </div>
           <Input
-            label="Company"
+            label="Компанія"
             {...register("billing_address.company")}
             autoComplete="organization"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="Address"
+            label="Адреса"
             {...register("billing_address.address_1", {
-              required: "Address is required",
+              required: "Необхідно вказати адресу",
             })}
             autoComplete="address-line1"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="Apartments, suite, etc."
+            label="Квартира, кабінет і т. д"
             {...register("billing_address.address_2")}
             autoComplete="address-line2"
             errors={errors}
@@ -53,18 +53,18 @@ const BillingAddress = () => {
           />
           <div className="grid grid-cols-[144px_1fr] gap-x-2">
             <Input
-              label="Postal code"
+              label="Індекс"
               {...register("billing_address.postal_code", {
-                required: "Postal code is required",
+                required: "Поштовий індекс обов'язковий",
               })}
               autoComplete="postal-code"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="City"
+              label="Місто"
               {...register("billing_address.city", {
-                required: "City is required",
+                required: "Необхідно вказати місто",
               })}
               autoComplete="address-level2"
               errors={errors}
@@ -73,21 +73,21 @@ const BillingAddress = () => {
           </div>
           <CountrySelect
             {...register("billing_address.country_code", {
-              required: "Country is required",
+              required: "Необхідно вказати країну",
             })}
             autoComplete="country"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="State / Province"
+            label="Область"
             {...register("billing_address.province")}
             autoComplete="address-level1"
             errors={errors}
             touched={touchedFields}
           />
           <Input
-            label="Phone"
+            label="Телефон"
             {...register("billing_address.phone")}
             autoComplete="tel"
             errors={errors}
