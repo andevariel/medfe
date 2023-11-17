@@ -12,7 +12,7 @@ const MedusaCTA = () => {
 
 const PoweredBy = () => {
   return (
-    "Країна стартапів"
+    <span>Країна стартапів</span>
     // <svg
     //   width="158"
     //   height="24"
