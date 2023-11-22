@@ -67,31 +67,47 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             <p>{product.material ? product.material : "-"}</p>
           </div> */}
           <div>
+            <span className="font-semibold">Склад</span>
+            <p>{product.metadata?.Склад ? product.metadata?.Склад: "-"}</p>
+          </div>
+          <div>
+            <span className="font-semibold">Колір</span>
+            <p>{product.metadata?.Колір ? product.metadata?.Колір: "-"}</p>
+          </div>          
+          <div>
             <span className="font-semibold">Щільність</span>
-            <p>{product.metadata.density ? product.metadata.density: "-"}</p>
+            <p>{product.metadata?.Щільність ? product.metadata?.Щільність: "-"}</p>
           </div>
           {/* <div>
             <span className="font-semibold">Country of origin</span>
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div> */}
-          <div>
+          {/* <div>
             <span className="font-semibold">Type</span>
             <p>{product.type ? product.type.value : "-"}</p>
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">Weight</span>
-            <p>{product.weight ? `${product.weight} g` : "-"}</p>
+        <div>
+            <span className="font-semibold">Ширина</span>
+            <p>{product.metadata?.Ширина ? product.metadata?.Ширина: "-"}</p>
           </div>
           <div>
+            <span className="font-semibold">Зносостійкість</span>
+            <p>{product.metadata?.Зносостійкість ? product.metadata?.Зносостійкість: "-"}</p>
+          </div>          
+          {/* <div>
+            <span className="font-semibold">Weight</span>
+            <p>{product.weight ? `${product.weight} g` : "-"}</p>
+          </div> */}
+          {/* <div>
             <span className="font-semibold">Dimensions</span>
             <p>
               {product.length && product.width && product.height
                 ? `${product.length}L x ${product.width}W x ${product.height}H`
                 : "-"}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       {product.tags?.length ? (

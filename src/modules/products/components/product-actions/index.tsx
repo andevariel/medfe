@@ -24,6 +24,24 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
     return variantPrice || cheapestPrice || null
   }, [price])
 
+  const [quantity, setQuantity] = React.useState(1);
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Ensure quantity is a positive integer
+    const newQuantity = Math.max(1, parseInt(e.target.value, 10) || 1);
+    setQuantity(newQuantity);
+  };
+
+  const handleAddToCart = () => {
+    if (variant) {
+      const cartItem = {
+        variantId: variant.id,
+        quantity,
+      };
+      addToCart(quantity);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-y-2">
       {product.collection && (
@@ -84,7 +102,22 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
         )}
       </div>
 
-      <Button onClick={addToCart}>
+      {/* Add the quantity input field */}
+      <div className="mb-4">
+        <label htmlFor="quantity" className="text-sm text-gray-700">
+        Кількість:
+        </label>&nbsp;
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          value={quantity}
+          onChange={handleQuantityChange}
+          className="w-16 px-2 py-1 border border-gray-300 rounded-md"
+        />
+      </div>
+
+      <Button onClick={handleAddToCart}>
         {!inStock ? "Чекаємо надходження" : "Додати в кошик"}
       </Button>
     </div>
