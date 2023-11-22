@@ -27,32 +27,37 @@ export default class SimpleSlider extends Component {
     return (
       <div>
        <div style={{ textAlign: "center", marginBottom: "20px" }}>
-          <h3 className="text-2xl-semi">Вікер</h3>
+          <h3 className="text-2xl-semi">Розпродаж Кіото</h3>
         </div>      
         <Slider {...settings}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
             <a href="/collections/canvas">
-              <img src="/Slider1.jpg" alt="Slide 1" style={imageStyle} />
+              <img src="/kyoto/low/Blossom_02-Ink.jpg" alt="Slide 1" style={imageStyle} />
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <a href="/collections/canvas">
-              <img src="/Slider2.jpg" alt="Slide 2" style={imageStyle} />
+              <img src="/kyoto/low/Blossom_05-Bamboo.jpg" alt="Slide 2" style={imageStyle} />
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <a href="/collections/canvas">
-              <img src="/Slider3.jpg" alt="Slide 3" style={imageStyle} />
+              <img src="/kyoto/low/Inari_02-Ink.jpg" alt="Slide 3" style={imageStyle} />
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <a href="/collections/canvas">
-              <img src="/Slider4.jpg" alt="Slide 4" style={imageStyle} />
+              <img src="/kyoto/low/Inari_03-Pearl.jpg" alt="Slide 4" style={imageStyle} />
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <a href="/collections/canvas">
-              <img src="/Slider5.jpg" alt="Slide 5" style={imageStyle} />
+              <img src="/kyoto/low/Mikado_03-Mink.jpg" alt="Slide 5" style={imageStyle} />
+            </a>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <a href="/collections/canvas">
+              <img src="/kyoto/low/Obi_03-Pearl.jpg" alt="Slide 5" style={imageStyle} />
             </a>
           </div>
         </Slider>
