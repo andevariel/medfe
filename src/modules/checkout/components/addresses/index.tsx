@@ -25,11 +25,11 @@ const Addresses = () => {
         <div className="px-8 pb-8">
           <ShippingAddress />
           <div className="mt-6">
-            <Checkbox
+            {/* <Checkbox
               label="Такий самий, як адреса для оплати"
               checked={checked}
               onChange={onChange}
-            />
+            /> */}
           </div>
           {!checked && (
             <div>

@@ -68,7 +68,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div> */}
           <div>
             <span className="font-semibold">Склад</span>
-            <p>{product.metadata?.Склад ? product.metadata?.Склад: "-"}</p>
+            <p>{product.collection?.metadata?.Склад ? product.collection?.metadata?.Склад: "-"}</p>
           </div>
           <div>
             <span className="font-semibold">Колір</span>
@@ -76,7 +76,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div>          
           <div>
             <span className="font-semibold">Щільність</span>
-            <p>{product.metadata?.Щільність ? product.metadata?.Щільність: "-"}</p>
+            <p>{product.collection?.metadata?.Щільність ? product.collection?.metadata?.Щільність: "-"}</p>
           </div>
           {/* <div>
             <span className="font-semibold">Country of origin</span>
@@ -90,11 +90,11 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
         <div className="flex flex-col gap-y-4">
         <div>
             <span className="font-semibold">Ширина</span>
-            <p>{product.metadata?.Ширина ? product.metadata?.Ширина: "-"}</p>
+            <p>{product.collection?.metadata?.Ширина ? product.collection?.metadata?.Ширина: "-"}</p>
           </div>
           <div>
             <span className="font-semibold">Зносостійкість</span>
-            <p>{product.metadata?.Зносостійкість ? product.metadata?.Зносостійкість: "-"}</p>
+            <p>{product.collection?.metadata?.Зносостійкість ? product.collection?.metadata?.Зносостійкість: "-"}</p>
           </div>          
           {/* <div>
             <span className="font-semibold">Weight</span>

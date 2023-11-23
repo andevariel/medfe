@@ -67,15 +67,15 @@ const ShippingAddress = () => {
               errors={errors}
               touched={touchedFields}
             />
-            <Input
+            {/* <Input
               label="Квартира, кабінет і т. д"
               {...register("shipping_address.address_2")}
               autoComplete="address-line2"
               errors={errors}
               touched={touchedFields}
-            />
+            /> */}
             <div className="grid grid-cols-[122px_1fr] gap-x-2">
-              <Input
+              {/* <Input
                 label="Індекс"
                 {...register("shipping_address.postal_code", {
                   required: "Необхідно вказати поштовий індекс",
@@ -83,7 +83,7 @@ const ShippingAddress = () => {
                 autoComplete="postal-code"
                 errors={errors}
                 touched={touchedFields}
-              />
+              /> */}
               <Input
                 label="Місто"
                 {...register("shipping_address.city", {
@@ -102,13 +102,13 @@ const ShippingAddress = () => {
               errors={errors}
               touched={touchedFields}
             />
-            <Input
+            {/* <Input
               label="Область"
               {...register("shipping_address.province")}
               autoComplete="address-level1"
               errors={errors}
               touched={touchedFields}
-            />
+            /> */}
             <Input
               label="Телефон"
               {...register("shipping_address.phone")}
