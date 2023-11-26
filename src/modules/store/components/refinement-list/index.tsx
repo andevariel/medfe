@@ -1,49 +1,75 @@
 import { StoreGetProductsParams } from "@medusajs/medusa"
-import FilterRadioGroup from "@modules/common/components/filter-radio-group"
 import { useCollections } from "medusa-react"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent } from "react"
 
-type SortCollectionFilterProps = {
+type RefinementListProps = {
   refinementList: StoreGetProductsParams
   setRefinementList: (refinementList: StoreGetProductsParams) => void
 }
 
-const CollectionFilter = ({
+const RefinementList = ({
   refinementList,
   setRefinementList,
-}: SortCollectionFilterProps) => {
+}: RefinementListProps) => {
   const { collections, isLoading } = useCollections()
-  const [collectionId, setCollectionId] = useState<string | null>(null)
-
-  if (!collections) {
-    return null
-  }
-
-  const collectionMap = collections?.map((c) => ({
-    value: c.id,
-    label: c.title,
-  }))
 
   const handleCollectionChange = (
     e: ChangeEvent<HTMLInputElement>,
     id: string
   ) => {
-    setCollectionId(id)
+    const { checked } = e.target
 
-    setRefinementList({
-      ...refinementList,
-      collection_id: [id],
-    })
+    const collectionIds = refinementList.collection_id || []
+
+    const exists = collectionIds.includes(id)
+
+    if (checked && !exists) {
+      setRefinementList({
+        ...refinementList,
+        collection_id: [...collectionIds, id],
+      })
+
+      return
+    }
+
+    if (!checked && exists) {
+      setRefinementList({
+        ...refinementList,
+        collection_id: collectionIds.filter((c) => c !== id),
+      })
+
+      return
+    }
+
+    return
   }
 
   return (
-    <FilterRadioGroup
-      title="Collections"
-      items={collectionMap}
-      value={collectionId}
-      handleChange={handleCollectionChange}
-    />
+    <div>
+      <div className="px-8 py-4  small:pr-0 small:pl-8 small:min-w-[250px]">
+        <div className="flex gap-x-3 small:flex-col small:gap-y-3">
+          <span className="text-base-semi">Колекції</span>
+          <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
+            {collections?.map((c) => (
+              <li key={c.id}>
+                <label className="flex items-center gap-x-2">
+                  <input
+                    type="checkbox"
+                    defaultChecked={refinementList.collection_id?.includes(
+                      c.id
+                    )}
+                    onChange={(e) => handleCollectionChange(e, c.id)}
+                    className="accent-amber-200"
+                  />
+                  {c.title}
+                </label>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default CollectionFilter
+export default RefinementList
