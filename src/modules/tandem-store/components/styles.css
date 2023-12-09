@@ -62,7 +62,7 @@
   min-height: 54px;
   outline: none;
   padding-left: 56px;
-  width: 250px;
+  width: 100%;
 }
 
 .ais-SearchBox-input::placeholder {
@@ -116,9 +116,7 @@
 /* Menus */
 
 .ais-RefinementList-item {
-  padding-left: 8px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 8px 16px 8px 8px;
   border-radius: 3px;
   background-color: rgba(65, 66, 71, 0.06);
 }
@@ -158,4 +156,8 @@
 }
 
 .ais-InfiniteHits-loadMore {
+}
+
+.ais-InfiniteHits-loadMore[disabled] {
+  display: none;
 }

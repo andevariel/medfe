@@ -35,7 +35,7 @@ const DropdownMenu = () => {
                   "relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none"
                 )}
                 onClick={() => push("/store")}
-                style={{ fontSize: '14px' }}
+                style={{ fontSize: "14px" }}
               >
                 Інтернет Магазин
               </Popover.Button>
@@ -59,8 +59,21 @@ const DropdownMenu = () => {
                   <div className="flex items-start content-container">
                     <div className="flex flex-col flex-1 max-w-[30%]">
                       <h3 className="text-base-semi text-gray-900 mb-4">
-                      Колекції
+                        Колекції
                       </h3>
+                      <div className="pb-3">
+                        {/* Add the "All" link here with underline */}
+                        <Link
+                          href="/store"
+                          onClick={() => setOpen(false)}
+                          style={{
+                            fontSize: "16px",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          Всі колекції
+                        </Link>
+                      </div>
                       <div className="flex items-start">
                         {collections &&
                           chunk(collections, 6).map((chunk, index) => {
