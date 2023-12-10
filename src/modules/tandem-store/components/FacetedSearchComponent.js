@@ -6,6 +6,8 @@ import {
   ClearRefinements,
   RefinementList,
   InfiniteHits,
+  CurrentRefinements,
+  SortBy,
 } from "react-instantsearch-dom"
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch"
 
@@ -76,7 +78,22 @@ const FacetSearch = () => {
               )}
               <ClearRefinements translations={{ reset: "Скинути фільтри" }} />
 
-              <div>
+              <div className={`bg-gray-100 p-4`}>
+                <div className="mb-4">Колекція</div>
+                <RefinementList
+                  attribute="collection_title"
+                  limit={7}
+                  showMore
+                  translations={{ showMore: "Показати більше" }}
+                  defaultRefinement={facetFilters.collection_title || []}
+                  onRefine={(values) =>
+                    handleFacetChange("collection_title", values)
+                  }
+                />
+              </div>
+              <br />
+
+              <div className={`bg-gray-100 p-4`}>
                 <div className="mb-4">Тип Тканини</div>
                 <RefinementList
                   attribute="fabric_type"
@@ -89,7 +106,7 @@ const FacetSearch = () => {
               </div>
               <br />
 
-              <div>
+              <div className={`bg-gray-100 p-4`}>
                 <div className="mb-4">Колір</div>
                 <RefinementList
                   attribute="color"
@@ -98,6 +115,7 @@ const FacetSearch = () => {
                   onRefine={(values) => handleFacetChange("color", values)}
                 />
               </div>
+              <br />
             </div>
           </Dialog>
         </div>
@@ -118,8 +136,10 @@ const FacetSearch = () => {
 
 const CustomHit = ({ hit }) => (
   <div key={hit.id}>
-    <a href={`/products/${hit.handle}`}>
-      <h2 style={{ padding: "10px" }}>{hit.title}</h2>
+    <a href={`/collections/${hit.collection_handle}`}>
+      <h2 style={{ padding: "10px" }}>
+        {hit.fabric_type} {hit.collection_title}
+      </h2>
       {hit.thumbnail && <img src={hit.thumbnail} alt={hit.title} />}
       <p style={{ padding: "10px" }}>{hit.description}</p>
       <button className="flex items-center text-large-regular border-b border-current gap-x-4 py-2 transition-all duration-300 group hover:pl-4 hover:pr-1">

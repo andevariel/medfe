@@ -116,18 +116,18 @@
     "@algolia/logger-common" "4.20.0"
     "@algolia/requester-common" "4.20.0"
 
-"@algolia/ui-components-highlight-vdom@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.1.tgz"
-  integrity sha512-IlYgIaCUEkz9ezNbwugwKv991oOHhveyq6nzL0F1jDzg1p3q5Yj/vO4KpNG910r2dwGCG3nEm5GtChcLnarhFA==
+"@algolia/ui-components-highlight-vdom@^1.2.1", "@algolia/ui-components-highlight-vdom@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.2.tgz"
+  integrity sha512-/+7jh7cd5rR2yQC7ME4SDcnAMiD1Ofn5Qq+E7afTJx9XSMOHkLR77/o6YcuJ60TfD1S+9lr7yjBLACon8gOuzQ==
   dependencies:
-    "@algolia/ui-components-shared" "1.2.1"
+    "@algolia/ui-components-shared" "1.2.2"
     "@babel/runtime" "^7.0.0"
 
-"@algolia/ui-components-shared@^1.2.1", "@algolia/ui-components-shared@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@algolia/ui-components-shared/-/ui-components-shared-1.2.1.tgz"
-  integrity sha512-a7mYHf/GVQfhAx/HRiMveKkFvHspQv/REdG+C/FIOosiSmNZxX7QebDwJkrGSmDWdXO12D0Qv1xn3AytFcEDlQ==
+"@algolia/ui-components-shared@^1.2.1", "@algolia/ui-components-shared@^1.2.2", "@algolia/ui-components-shared@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@algolia/ui-components-shared/-/ui-components-shared-1.2.2.tgz"
+  integrity sha512-FYwEG5sbr8p4V8mqP0iUaKgmWfcrMXRXwp7e6iBuB65P/7QyL8pT4I6/iGb85Q5mNH+UtYYSmLZhKjEblllKEQ==
 
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
@@ -716,12 +716,12 @@
     awilix "^8.0.1"
     ulid "^2.3.0"
 
-"@meilisearch/instant-meilisearch@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.npmjs.org/@meilisearch/instant-meilisearch/-/instant-meilisearch-0.7.1.tgz"
-  integrity sha512-bUGiGO/da915Y9Dmu2n5fTMFvSlJHC6ABOcL7056OiBSCU1Bx1EvVEkzYmTxac3lqIoIpxZU5t0WXiPeikrg4g==
+"@meilisearch/instant-meilisearch@^0.13.6":
+  version "0.13.6"
+  resolved "https://registry.npmjs.org/@meilisearch/instant-meilisearch/-/instant-meilisearch-0.13.6.tgz"
+  integrity sha512-olVCeOXmignmfY+ML8ExgyPCLGkr/XPXcz0n8tajRFr4afDKzomxySGMfQXVok9SoyhB+xeNH/mEMhguxCwklg==
   dependencies:
-    meilisearch "0.25.1"
+    meilisearch "^0.35.0"
 
 "@mikro-orm/core@^5.0.0", "@mikro-orm/core@5.7.12":
   version "5.7.12"
@@ -1390,10 +1390,10 @@ ajv@^6.10.0, ajv@^6.12.4, ajv@^6.12.5, ajv@^6.9.1:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-algoliasearch-helper@>=3:
-  version "3.14.1"
-  resolved "https://registry.npmjs.org/algoliasearch-helper/-/algoliasearch-helper-3.14.1.tgz"
-  integrity sha512-TZihm6eisSqgLWOXpISAUFXAolJvEpa1gkTjUUEDmVl+TTiQuNvzLQ/osOiqIXzx6QSS4Pd6Ry+SKKOwiqJ17g==
+algoliasearch-helper@>=3, algoliasearch-helper@3.15.0:
+  version "3.15.0"
+  resolved "https://registry.npmjs.org/algoliasearch-helper/-/algoliasearch-helper-3.15.0.tgz"
+  integrity sha512-DGUnK3TGtDQsaUE4ayF/LjSN0DGsuYThB8WBgnnDY0Wq04K6lNVruO3LfqJOgSfDiezp+Iyt8Tj4YKHi+/ivSA==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -2485,7 +2485,7 @@ cross-env@^5.2.1:
   dependencies:
     cross-spawn "^6.0.5"
 
-cross-fetch@^3.1.5:
+cross-fetch@^3.1.6:
   version "3.1.8"
   resolved "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.1.8.tgz"
   integrity sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==
@@ -4038,6 +4038,25 @@ inquirer@^8.0.0:
     through "^2.3.6"
     wrap-ansi "^6.0.1"
 
+instantsearch.js@^4.60.0:
+  version "4.60.0"
+  resolved "https://registry.npmjs.org/instantsearch.js/-/instantsearch.js-4.60.0.tgz"
+  integrity sha512-u/xeCT1DaxPioJnSm3hV4lNAojlhbjGrpX5fHO6+RJjpDFv/MgYxiIOdaIRowmt5F0v/3QCm+Un5f4jy1/+emA==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+    "@algolia/ui-components-highlight-vdom" "^1.2.2"
+    "@algolia/ui-components-shared" "^1.2.2"
+    "@types/dom-speech-recognition" "^0.0.1"
+    "@types/google.maps" "^3.45.3"
+    "@types/hogan.js" "^3.0.0"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "3.15.0"
+    hogan.js "^3.0.2"
+    htm "^3.0.0"
+    preact "^10.10.0"
+    qs "^6.5.1 < 6.10"
+    search-insights "^2.6.0"
+
 instantsearch.js@4.56.8:
   version "4.56.8"
   resolved "https://registry.npmjs.org/instantsearch.js/-/instantsearch.js-4.56.8.tgz"
@@ -4903,12 +4922,12 @@ medusa-test-utils@^1.1.40:
     medusa-core-utils "^1.2.0"
     randomatic "^3.1.1"
 
-meilisearch@0.25.1:
-  version "0.25.1"
-  resolved "https://registry.npmjs.org/meilisearch/-/meilisearch-0.25.1.tgz"
-  integrity sha512-20jO0pK9BhghxHSkOLbdoYn58h/Z0PNL3JQcRq7ipNIeqrxkAetCZZ6ttJC3uxcz0jVglmiFoSXu3Z/lEOLOLQ==
+meilisearch@^0.35.0:
+  version "0.35.1"
+  resolved "https://registry.npmjs.org/meilisearch/-/meilisearch-0.35.1.tgz"
+  integrity sha512-azI7vA4eCfBpUwngDTaG/VpiuO5zAMM35QrfREVPC+KnuNBKwBrwRaTwV+Dt18JDCgk/OWZJPaONYgBHSISbNQ==
   dependencies:
-    cross-fetch "^3.1.5"
+    cross-fetch "^3.1.6"
 
 merge-descriptors@1.0.1:
   version "1.0.1"
@@ -5821,7 +5840,7 @@ prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5958,7 +5977,7 @@ react-country-flag@^3.0.2:
   resolved "https://registry.npmjs.org/react-country-flag/-/react-country-flag-3.1.0.tgz"
   integrity sha512-JWQFw1efdv9sTC+TGQvTKXQg1NKbDU2mBiAiRWcKM9F1sK+/zjhP2yGmm8YDddWyZdXVkR8Md47rPMJmo4YO5g==
 
-"react-dom@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, "react-dom@>= 16.8.0 < 19", react-dom@>=16.3.0, react-dom@>=16.8.0:
+"react-dom@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, "react-dom@>= 16.3.0 < 19", "react-dom@>= 16.8.0 < 19", react-dom@>=16.3.0, react-dom@>=16.8.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -5966,10 +5985,37 @@ react-country-flag@^3.0.2:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-fast-compare@^3.0.0:
+  version "3.2.2"
+  resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.2.tgz"
+  integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
+
 react-hook-form@^7.0.0, react-hook-form@^7.30.0:
   version "7.46.1"
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.46.1.tgz"
   integrity sha512-0GfI31LRTBd5tqbXMGXT1Rdsv3rnvy0FjEk8Gn9/4tp6+s77T7DPZuGEpBRXOauL+NhyGT5iaXzdIM2R6F/E+w==
+
+react-instantsearch-core@6.40.4:
+  version "6.40.4"
+  resolved "https://registry.npmjs.org/react-instantsearch-core/-/react-instantsearch-core-6.40.4.tgz"
+  integrity sha512-sEOgRU2MKL8edO85sNHvKlZ5yq9OFw++CDsEqYpHJvbWLE/2J2N49XAUY90kior09I2kBkbgowBbov+Py1AubQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "3.14.0"
+    prop-types "^15.6.2"
+    react-fast-compare "^3.0.0"
+
+react-instantsearch-dom@^6.40.4:
+  version "6.40.4"
+  resolved "https://registry.npmjs.org/react-instantsearch-dom/-/react-instantsearch-dom-6.40.4.tgz"
+  integrity sha512-Oy8EKEOg/dfTE8tHc7GZRlzUdbZY4Mxas1x2OtvSNui+YAbIWafIf1g98iOGyVTB2qI5WH91YyUJTLPNfLrs6Q==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "3.14.0"
+    classnames "^2.2.5"
+    prop-types "^15.6.2"
+    react-fast-compare "^3.0.0"
+    react-instantsearch-core "6.40.4"
 
 react-instantsearch-hooks-web@^6.29.0:
   version "6.47.3"
@@ -6011,7 +6057,7 @@ react-slick@^0.29.0:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-"react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16.8.0 < 19", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16, react@>=16.3.0, react@>=16.8.0:
+"react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16.3.0 < 19", "react@>= 16.8.0 < 19", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16, react@>=16.3.0, react@>=16.8.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
