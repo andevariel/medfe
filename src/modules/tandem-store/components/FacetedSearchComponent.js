@@ -8,10 +8,61 @@ import {
   InfiniteHits,
   CurrentRefinements,
   SortBy,
-} from "react-instantsearch-dom"
+} from "react-instantsearch"
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch"
 
 import { Dialog } from "./Dialog"
+
+import { useCurrentRefinements } from "react-instantsearch"
+
+function CustomCurrentRefinements(props) {
+  const { items, refine } = useCurrentRefinements(props)
+
+  return (
+    <div className="ais-ClearRefinements">
+      {items.map((item, itemIndex) => (
+        <React.Fragment key={itemIndex}>
+          {/* {itemIndex > 0 && ", "}{" "} */}
+          {/* Add a comma and space after the first item */}
+          {/* <span>{item.label}:</span> */}
+          {item.refinements.map((refinement, refinementIndex) => (
+            <React.Fragment key={refinement.label}>
+              {refinementIndex > 0 && " "}
+              {/* Add a comma and space after the first refinement */}
+              <span style={{ marginRight: "8px" }}>
+                {refinement.label}{" "}
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    if (isModifierClick(event)) {
+                      return
+                    }
+                    refine(refinement)
+                  }}
+                >
+                  X
+                </button>{" "}
+                {/* Add a space after the "X" button */}
+              </span>
+            </React.Fragment>
+          ))}
+        </React.Fragment>
+      ))}
+    </div>
+  )
+}
+
+function isModifierClick(event) {
+  const isMiddleClick = event.button === 1
+
+  return Boolean(
+    isMiddleClick ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey
+  )
+}
 
 const searchClient = instantMeiliSearch("http://localhost:7700", "1234567Am")
 
@@ -76,7 +127,7 @@ const FacetSearch = () => {
               {!isMobile && (
                 <SearchBox translations={{ placeholder: "Пошук" }} />
               )}
-              <ClearRefinements translations={{ reset: "Скинути фільтри" }} />
+              <br />
 
               <div className={`bg-gray-100 p-4`}>
                 <div className="mb-4">Колекція</div>
@@ -84,11 +135,16 @@ const FacetSearch = () => {
                   attribute="collection_title"
                   limit={7}
                   showMore
-                  translations={{ showMore: "Показати більше" }}
-                  defaultRefinement={facetFilters.collection_title || []}
-                  onRefine={(values) =>
-                    handleFacetChange("collection_title", values)
-                  }
+                  translations={{
+                    submitButtonTitle: "Submit",
+                    resetButtonTitle: "Reset",
+                    noResultsText: "No brands matching your query.",
+                    showMoreButtonText({ isShowingMore }) {
+                      return isShowingMore
+                        ? "Менше колекцій"
+                        : "Більше колекцій"
+                    },
+                  }}
                 />
               </div>
               <br />
@@ -122,9 +178,19 @@ const FacetSearch = () => {
 
         {/* Right column for search results */}
         <div className={`md:col-span-3 w-full p-4`}>
+          {/* Clear Refinements */}
+          {/* <ClearRefinements
+            translations={{
+              resetButtonText: "Скинути фільтри",
+            }}
+          /> */}
+          <CustomCurrentRefinements />
           <div>
             <InfiniteHits
-              translations={{ loadMore: "Дивитись більше" }}
+              translations={{
+                showPreviousButtonText: "Попередній перегляд",
+                showMoreButtonText: "Дивитись більше",
+              }}
               hitComponent={CustomHit}
             />
           </div>
