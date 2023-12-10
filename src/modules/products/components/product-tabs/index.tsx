@@ -68,15 +68,23 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div> */}
           <div>
             <span className="font-semibold">Склад</span>
-            <p>{product.collection?.metadata?.Склад ? product.collection?.metadata?.Склад: "-"}</p>
+            <p>
+              {product.collection?.metadata?.Склад
+                ? product.collection?.metadata?.Склад
+                : "-"}
+            </p>
           </div>
           <div>
             <span className="font-semibold">Колір</span>
-            <p>{product.metadata?.Колір ? product.metadata?.Колір: "-"}</p>
-          </div>          
+            <p>{product.metadata?.color ? product.metadata?.color : "-"}</p>
+          </div>
           <div>
             <span className="font-semibold">Щільність</span>
-            <p>{product.collection?.metadata?.Щільність ? product.collection?.metadata?.Щільність: "-"}</p>
+            <p>
+              {product.collection?.metadata?.Щільність
+                ? product.collection?.metadata?.Щільність
+                : "-"}
+            </p>
           </div>
           {/* <div>
             <span className="font-semibold">Country of origin</span>
@@ -88,14 +96,22 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div> */}
         </div>
         <div className="flex flex-col gap-y-4">
-        <div>
+          <div>
             <span className="font-semibold">Ширина</span>
-            <p>{product.collection?.metadata?.Ширина ? product.collection?.metadata?.Ширина: "-"}</p>
+            <p>
+              {product.collection?.metadata?.Ширина
+                ? product.collection?.metadata?.Ширина
+                : "-"}
+            </p>
           </div>
           <div>
             <span className="font-semibold">Зносостійкість</span>
-            <p>{product.collection?.metadata?.Зносостійкість ? product.collection?.metadata?.Зносостійкість: "-"}</p>
-          </div>          
+            <p>
+              {product.collection?.metadata?.Зносостійкість
+                ? product.collection?.metadata?.Зносостійкість
+                : "-"}
+            </p>
+          </div>
           {/* <div>
             <span className="font-semibold">Weight</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
@@ -128,7 +144,7 @@ const ShippingInfoTab = () => {
           <div>
             <span className="font-semibold">Швидка доставка</span>
             <p className="max-w-sm">
-            Ваша тканина прибуде протягом 1-2 робочих днів.
+              Ваша тканина прибуде протягом 1-2 робочих днів.
             </p>
           </div>
         </div>

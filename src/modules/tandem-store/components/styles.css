@@ -172,3 +172,9 @@
 .ais-RefinementList-showMore[disabled] {
   display: none;
 }
+
+.ais-RefinementList-count {
+  padding-left: 4px;
+  color: grey; /* Add color property for grey font */
+  font-size: 12px; /* Add font-size property for a smaller font */
+}
