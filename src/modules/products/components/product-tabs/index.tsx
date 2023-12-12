@@ -67,22 +67,22 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             <p>{product.material ? product.material : "-"}</p>
           </div> */}
           <div>
-            <span className="font-semibold">Склад</span>
+            <span className="font-semibold">Тип тканини</span>
             <p>
-              {product.collection?.metadata?.Склад
-                ? product.collection?.metadata?.Склад
-                : "-"}
+              {product.collection?.metadata?.fabric_type
+                ? product.collection?.metadata?.fabric_type
+                : "-"}{" "}
             </p>
           </div>
           <div>
-            <span className="font-semibold">Колір</span>
+            <span className="font-semibold">Колір тканини</span>
             <p>{product.metadata?.color ? product.metadata?.color : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Щільність</span>
+            <span className="font-semibold">Склад тканини</span>
             <p>
-              {product.collection?.metadata?.Щільність
-                ? product.collection?.metadata?.Щільність
+              {product.collection?.metadata?.Склад
+                ? product.collection?.metadata?.Склад
                 : "-"}
             </p>
           </div>
@@ -97,19 +97,30 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
         </div>
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Ширина</span>
+            <span className="font-semibold">Ширина тканини</span>
             <p>
               {product.collection?.metadata?.Ширина
                 ? product.collection?.metadata?.Ширина
-                : "-"}
+                : "-"}{" "}
+              см
             </p>
           </div>
           <div>
-            <span className="font-semibold">Зносостійкість</span>
+            <span className="font-semibold">Тест Мартиндейла</span>
             <p>
               {product.collection?.metadata?.Зносостійкість
                 ? product.collection?.metadata?.Зносостійкість
-                : "-"}
+                : "-"}{" "}
+              циклів
+            </p>
+          </div>
+          <div>
+            <span className="font-semibold">Вага тканини</span>
+            <p>
+              {product.collection?.metadata?.Щільність
+                ? product.collection?.metadata?.Щільність
+                : "-"}{" "}
+              гр/м
             </p>
           </div>
           {/* <div>

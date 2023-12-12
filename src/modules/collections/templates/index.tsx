@@ -61,6 +61,12 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       <div className="mb-8 text-2xl-semi">
         <h1>{collection.title}</h1>
       </div>
+      <div
+        className="py-16 flex justify-center items-center text-base-regular mt-2 text-gray-700"
+        ref={ref}
+      >
+        {collection.metadata?.description}
+      </div>
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>

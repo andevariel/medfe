@@ -11,7 +11,6 @@ const ProductPreview = ({
 }: ProductPreviewType) => {
   return (
     <Link href={`/products/${handle}`}>
-      test
       <div>
         <Thumbnail thumbnail={thumbnail} size="full" />
         <div className="text-base-regular mt-2">

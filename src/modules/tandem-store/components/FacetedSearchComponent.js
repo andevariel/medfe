@@ -48,105 +48,107 @@ const FacetSearch = () => {
   }
 
   return (
-    <InstantSearch
-      indexName="products"
-      searchClient={searchClient}
-      future={{
-        preserveSharedStateOnUnmount: true,
-      }}
-    >
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        {/* Left column for facet filters */}
-        <div
-          className={`md:col-span-1 ${
-            isMobile ? "w-full" : "hidden md:block"
-          } p-4`}
-        >
-          {/* Mobile: Show Filters Button */}
-          {isMobile && (
-            <div className="text-center mb-4">
-              <button onClick={toggleFilters}>
-                {showFilters ? "Hide Filters" : "Show Filters"}
-              </button>
-            </div>
-          )}
-
-          {/* Always show facets */}
-          <Dialog open={!isMobile || showFilters}>
-            <div className="w-full p-4">
-              {!isMobile && (
-                <SearchBox translations={{ placeholder: "Пошук" }} />
-              )}
-              <br />
-
-              <div className={`bg-gray-100 p-4`}>
-                <div className="mb-4">Колекція</div>
-                <RefinementList
-                  attribute="collection_title"
-                  limit={7}
-                  showMore
-                  translations={{
-                    submitButtonTitle: "Submit",
-                    resetButtonTitle: "Reset",
-                    noResultsText: "No brands matching your query.",
-                    showMoreButtonText({ isShowingMore }) {
-                      return isShowingMore
-                        ? "Менше колекцій"
-                        : "Більше колекцій"
-                    },
-                  }}
-                />
+    <div className="content-container py-6">
+      <InstantSearch
+        indexName="products"
+        searchClient={searchClient}
+        future={{
+          preserveSharedStateOnUnmount: true,
+        }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-4">
+          {/* Left column for facet filters */}
+          <div
+            className={`md:col-span-1 ${
+              isMobile ? "w-full" : "hidden md:block"
+            } p-4`}
+          >
+            {/* Mobile: Show Filters Button */}
+            {isMobile && (
+              <div className="text-center mb-4">
+                <button onClick={toggleFilters}>
+                  {showFilters ? "Hide Filters" : "Show Filters"}
+                </button>
               </div>
-              <br />
+            )}
 
-              <div className={`bg-gray-100 p-4`}>
-                <div className="mb-4">Тип Тканини</div>
-                <RefinementList
-                  attribute="fabric_type"
-                  translations={{ showMore: "Показати більше" }}
-                  defaultRefinement={facetFilters.fabric_type || []}
-                  onRefine={(values) =>
-                    handleFacetChange("fabric_type", values)
-                  }
-                />
+            {/* Always show facets */}
+            <Dialog open={!isMobile || showFilters}>
+              <div className="w-full">
+                {!isMobile && (
+                  <SearchBox translations={{ placeholder: "Пошук" }} />
+                )}
+                <br />
+
+                <div className={`bg-gray-100 p-4`}>
+                  <div className="mb-4">Колекція</div>
+                  <RefinementList
+                    attribute="collection_title"
+                    limit={7}
+                    showMore
+                    translations={{
+                      submitButtonTitle: "Submit",
+                      resetButtonTitle: "Reset",
+                      noResultsText: "No brands matching your query.",
+                      showMoreButtonText({ isShowingMore }) {
+                        return isShowingMore
+                          ? "Менше колекцій"
+                          : "Більше колекцій"
+                      },
+                    }}
+                  />
+                </div>
+                <br />
+
+                <div className={`bg-gray-100 p-4`}>
+                  <div className="mb-4">Тип Тканини</div>
+                  <RefinementList
+                    attribute="fabric_type"
+                    translations={{ showMore: "Показати більше" }}
+                    defaultRefinement={facetFilters.fabric_type || []}
+                    onRefine={(values) =>
+                      handleFacetChange("fabric_type", values)
+                    }
+                  />
+                </div>
+                <br />
+
+                <div className={`bg-gray-100 p-4`}>
+                  <div className="mb-4">Колір</div>
+                  <RefinementList
+                    attribute="color"
+                    translations={{ showMore: "Показати більше" }}
+                    defaultRefinement={facetFilters.color || []}
+                    onRefine={(values) => handleFacetChange("color", values)}
+                  />
+                </div>
+                <br />
               </div>
-              <br />
+            </Dialog>
+          </div>
 
-              <div className={`bg-gray-100 p-4`}>
-                <div className="mb-4">Колір</div>
-                <RefinementList
-                  attribute="color"
-                  translations={{ showMore: "Показати більше" }}
-                  defaultRefinement={facetFilters.color || []}
-                  onRefine={(values) => handleFacetChange("color", values)}
-                />
-              </div>
-              <br />
-            </div>
-          </Dialog>
-        </div>
-
-        {/* Right column for search results */}
-        <div className={`md:col-span-3 w-full p-4`}>
-          {/* Clear Refinements */}
-          {/* <ClearRefinements
+          {/* Right column for search results */}
+          <div className={`md:col-span-3 w-full p-4`}>
+            {/* Clear Refinements */}
+            {/* <ClearRefinements
             translations={{
               resetButtonText: "Скинути фільтри",
             }}
           /> */}
-          <CustomCurrentRefinements />
-          <div>
-            <InfiniteHits
-              translations={{
-                showPreviousButtonText: "Попередній перегляд",
-                showMoreButtonText: "Дивитись більше",
-              }}
-              hitComponent={CustomHit}
-            />
+            <CustomCurrentRefinements />
+            <div>
+              <InfiniteHits
+                translations={{
+                  showPreviousButtonText: "Попередній перегляд",
+                  showMoreButtonText: "Дивитись більше",
+                }}
+                hitComponent={CustomHit}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </InstantSearch>
+      </InstantSearch>
+    </div>
   )
 }
 
