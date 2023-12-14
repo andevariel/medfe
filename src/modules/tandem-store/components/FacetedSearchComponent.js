@@ -61,7 +61,7 @@ const FacetSearch = () => {
           <div
             className={`md:col-span-1 ${
               isMobile ? "w-full" : "hidden md:block"
-            } p-4`}
+            } p-0`}
           >
             {/* Mobile: Show Filters Button */}
             {isMobile && (
