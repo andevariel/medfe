@@ -15,21 +15,18 @@ export function CustomCurrentRefinements(props) {
             <React.Fragment key={refinement.label}>
               {refinementIndex > 0 && " "}
               {/* Add a comma and space after the first refinement */}
-              <span style={{ marginRight: "8px" }}>
-                {refinement.label}{" "}
-                <button
-                  type="button"
-                  onClick={(event) => {
-                    if (isModifierClick(event)) {
-                      return
-                    }
-                    refine(refinement)
-                  }}
-                >
-                  X
-                </button>{" "}
-                {/* Add a space after the "X" button */}
-              </span>
+              <button
+                type="button"
+                onClick={(event) => {
+                  if (isModifierClick(event)) {
+                    return
+                  }
+                  refine(refinement)
+                }}
+                style={{ marginRight: "8px" }}
+              >
+                {refinement.label} X {/* Add a space after the "X" button */}
+              </button>
             </React.Fragment>
           ))}
         </React.Fragment>

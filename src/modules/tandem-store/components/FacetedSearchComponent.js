@@ -3,18 +3,21 @@ import styles from "./styles.css"
 import {
   InstantSearch,
   SearchBox,
-  ClearRefinements,
   RefinementList,
   InfiniteHits,
-  CurrentRefinements,
-  SortBy,
 } from "react-instantsearch"
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch"
+
+const endpoint =
+  process.env.NEXT_PUBLIC_SEARCH_ENDPOINT || "http://localhost:7700"
+const apiKey = process.env.NEXT_PUBLIC_SEARCH_API_KEY || "1234567Am"
+const backendUrl =
+  process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
 
 import { Dialog } from "./Dialog"
 import { CustomCurrentRefinements } from "./CustomCurrentRefinements"
 
-const searchClient = instantMeiliSearch("http://localhost:7700", "1234567Am")
+const searchClient = instantMeiliSearch(endpoint, apiKey)
 
 const FacetSearch = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -117,9 +120,18 @@ const FacetSearch = () => {
                   <div className="mb-4">Колір</div>
                   <RefinementList
                     attribute="color"
-                    translations={{ showMore: "Показати більше" }}
-                    defaultRefinement={facetFilters.color || []}
-                    onRefine={(values) => handleFacetChange("color", values)}
+                    limit={7}
+                    showMore
+                    translations={{
+                      submitButtonTitle: "Submit",
+                      resetButtonTitle: "Reset",
+                      noResultsText: "No brands matching your query.",
+                      showMoreButtonText({ isShowingMore }) {
+                        return isShowingMore
+                          ? "Менше кольорів"
+                          : "Більше кольорів"
+                      },
+                    }}
                   />
                 </div>
                 <br />
@@ -152,19 +164,51 @@ const FacetSearch = () => {
   )
 }
 
-const CustomHit = ({ hit }) => (
-  <div key={hit.id}>
-    <a href={`/collections/${hit.collection_handle}`}>
-      <h2 style={{ padding: "10px" }}>
-        {hit.fabric_type} {hit.collection_title}
-      </h2>
-      {hit.thumbnail && <img src={hit.thumbnail} alt={hit.title} />}
-      <p style={{ padding: "10px" }}>{hit.description}</p>
-      <button className="flex items-center text-large-regular border-b border-current gap-x-4 py-2 transition-all duration-300 group hover:pl-4 hover:pr-1">
-        Перейти до колекції
-      </button>
-    </a>
-  </div>
-)
+const CustomHit = ({ hit }) => {
+  const [price, setPrice] = useState(null)
+
+  useEffect(() => {
+    // Fetch price when the component mounts or when hit.collection_handle changes
+    fetchPrice(hit.handle)
+  }, [hit.collection_handle])
+
+  const fetchPrice = (fabricHandle) => {
+    fetch(`${backendUrl}/store/products?handle=${fabricHandle}`, {
+      credentials: "include",
+    })
+      .then((response) => response.json())
+      .then(({ products, limit, offset, count }) => {
+        console.log("Fetched products:", products)
+        if (products.length > 0) {
+          setPrice(products[0]?.variants[0]?.prices[0]?.amount / 100)
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching price:", error)
+      })
+  }
+
+  return (
+    <div key={hit.id}>
+      <a href={`/collections/${hit.collection_handle}`}>
+        <h2 style={{ padding: "10px" }}>
+          {hit.fabric_type} {hit.collection_title}
+        </h2>
+        {hit.thumbnail && <img src={hit.thumbnail} alt={hit.title} />}
+        <p style={{ padding: "10px" }}>{hit.description}</p>
+        {price !== null ? (
+          <span className="font-semibold">${price?.toFixed(2)}</span>
+        ) : (
+          <span className="font-semibold">Завантаження ціни...</span>
+        )}
+      </a>
+      <a href={`/products/${hit.handle}`}>
+        <button className="flex items-center text-large-regular border-b border-current gap-x-4 py-2 transition-all duration-300 group hover:pl-4 hover:pr-1">
+          Купити
+        </button>
+      </a>
+    </div>
+  )
+}
 
 export default FacetSearch
