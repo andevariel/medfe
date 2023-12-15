@@ -197,7 +197,7 @@ const CustomHit = ({ hit }) => {
         {hit.thumbnail && <img src={hit.thumbnail} alt={hit.title} />}
         <p style={{ padding: "10px" }}>{hit.description}</p>
         {price !== null ? (
-          <span className="font-semibold">${price?.toFixed(2)}</span>
+          <span className="font-semibold">₴ {price?.toFixed(2)}</span>
         ) : (
           <span className="font-semibold">Завантаження ціни...</span>
         )}
