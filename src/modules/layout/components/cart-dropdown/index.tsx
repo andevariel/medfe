@@ -21,7 +21,9 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
-          <Link href="/cart">{`Кошик (${totalItems})`}</Link>
+          <Link href="/cart">
+            <p className="text-sm">{`Кошик (${totalItems})`}</p>
+          </Link>
         </Popover.Button>
         <Transition
           show={state}
@@ -97,7 +99,7 @@ const CartDropdown = () => {
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700 font-semibold">
-                    Проміжний підсумок{" "}
+                      Проміжний підсумок{" "}
                       {/* <span className="font-normal">(excl. taxes)</span> */}
                     </span>
                     <span className="text-large-semi">
@@ -119,11 +121,15 @@ const CartDropdown = () => {
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Кошик порожній. Але це ніколи не пізно виправити :)</span>
+                  <span>
+                    Кошик порожній. Але це ніколи не пізно виправити :)
+                  </span>
                   <div>
                     <Link href="/store">
                       <>
-                        <span className="sr-only">Перейти на сторінку з усіма колекціями</span>
+                        <span className="sr-only">
+                          Перейти на сторінку з усіма колекціями
+                        </span>
                         <Button onClick={close}>Огляд колекцій</Button>
                       </>
                     </Link>

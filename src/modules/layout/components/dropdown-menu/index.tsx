@@ -35,9 +35,8 @@ const DropdownMenu = () => {
                   "relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none"
                 )}
                 onClick={() => push("/store")}
-                style={{ fontSize: "14px" }}
               >
-                Інтернет Магазин
+                <p className="text-sm">Інтернет Магазин</p>
               </Popover.Button>
             </Link>
 

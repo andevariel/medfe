@@ -84,7 +84,7 @@ const FooterNav = () => {
             </div>
           )}
           <div className="flex flex-col gap-y-2">
-            <span className="text-base-semi">Tandem Team</span>
+            <span className="text-base-semi">Команда Тандем</span>
             <ul className="grid grid-cols-1 gap-y-2">
               <li>
                 <a
@@ -92,7 +92,7 @@ const FooterNav = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Tandemtextile@gmail.com
+                  tandemtextile@gmail.com
                 </a>
               </li>
               <li>
