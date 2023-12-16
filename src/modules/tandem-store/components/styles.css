@@ -209,3 +209,16 @@
     transform: scale(1.05);
   }
 } */
+
+.rectangular-image {
+  width: 333px; /* Adjust the width as needed */
+  height: 392px; /* Adjust the height as needed */
+  object-fit: cover; /* This property ensures the image maintains its aspect ratio while covering the specified dimensions */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.rectangular-image:hover {
+  transform: scale(
+    1.02
+  ); /* Scale the image to 110% on hover (adjust as needed) */
+}

@@ -194,7 +194,13 @@ const CustomHit = ({ hit }) => {
         <h2 style={{ padding: "10px" }}>
           {hit.fabric_type} {hit.collection_title}
         </h2>
-        {hit.thumbnail && <img src={hit.thumbnail} alt={hit.title} />}
+        {hit.thumbnail && (
+          <img
+            src={hit.thumbnail}
+            alt={hit.title}
+            className="rectangular-image"
+          />
+        )}
         <p style={{ padding: "10px" }}>{hit.description}</p>
         {price !== null ? (
           <span className="font-semibold">₴ {price?.toFixed(2)}</span>
