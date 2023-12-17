@@ -24,6 +24,17 @@ const FacetSearch = () => {
   const [showFilters, setShowFilters] = useState(false)
   const [facetFilters, setFacetFilters] = useState({})
 
+  const [showDiv1, setShowDiv1] = useState(true)
+  const [showDiv2, setShowDiv2] = useState(true)
+
+  const handleDiv1Close = () => {
+    setShowDiv1(false)
+  }
+
+  const handleDiv2Close = () => {
+    setShowDiv2(false)
+  }
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768) // Adjust the breakpoint as needed
@@ -172,6 +183,72 @@ const FacetSearch = () => {
                 hitComponent={CustomHit}
               />
             </div>
+
+            <div className="mb-2"></div>
+            {showDiv1 && (
+              <div
+                className="mb-4"
+                style={{
+                  background: "rgba(249 250 251)",
+                  padding: "10px",
+                  borderRadius: "10px",
+                  color: "black",
+                  position: "relative",
+                }}
+              >
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "6px",
+                    right: "6px",
+                    cursor: "pointer",
+                  }}
+                  onClick={handleDiv1Close}
+                >
+                  X
+                </button>
+                <p className="text-sm">
+                  Тканини для меблів від Танем Текстиль отримали сертифікат
+                  OEKO-TEX 100.<br></br> OEKO-TEX® STANDARD 100 - це один із
+                  найвідоміших у світі знаків якості для текстилю, який пройшов
+                  тестування на шкідливі речовини. Він гарантує довіру
+                  споживачів та високий рівень безпеки продукції.
+                </p>
+              </div>
+            )}
+
+            {showDiv2 && (
+              <div
+                className="mb-4"
+                style={{
+                  background: "rgba(249 250 251)",
+                  padding: "10px",
+                  borderRadius: "10px",
+                  color: "black",
+                  position: "relative",
+                }}
+              >
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "6px",
+                    right: "6px",
+                    cursor: "pointer",
+                  }}
+                  onClick={handleDiv2Close}
+                >
+                  X
+                </button>
+                <p className="text-sm">
+                  Наші тканини для оббивки меблів, які відштовхують плями,
+                  підтримують безтурботне життя, незалежно від того, де воно
+                  може відбуватися. У приміщенні, на вулиці, вдома, на роботі, у
+                  гостинних просторах... і всюди між цими місцями. Вони міцні
+                  там, де це потрібно: витривалі, неймовірно м'які на дотик і
+                  насичені стилем.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </InstantSearch>
@@ -234,7 +311,7 @@ const CustomHit = ({ hit }) => {
                   color: "white",
                 }}
               >
-                <p style={{ fontSize: "15px" }}>{hit.title}</p>
+                <p style={{ fontSize: "16px" }}>{hit.title}</p>
               </div>
             )}
           </div>
