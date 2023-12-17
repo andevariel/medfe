@@ -316,7 +316,12 @@ const CustomHit = ({ hit }) => {
             )}
           </div>
         )}
-        <p style={{ padding: "10px" }}>{hit.description}</p>
+        <p style={{ padding: "6px" }}>{hit.description}</p>
+        <div style={{ display: "flex", alignItems: "center", padding: "6px" }}>
+          <img src="drapery.png" alt="Slide 1" className="fabric-icon" />
+          <img src="upholstery.png" alt="Slide 1" className="fabric-icon" />
+          {/* <img src="FG-icons_PETS.png" alt="Slide 1" className="fabric-icon" /> */}
+        </div>
         {price !== null ? (
           <span className="font-semibold">₴ {price?.toFixed(2)}</span>
         ) : (
