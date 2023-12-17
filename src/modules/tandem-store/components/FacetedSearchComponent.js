@@ -181,6 +181,7 @@ const FacetSearch = () => {
 
 const CustomHit = ({ hit }) => {
   const [price, setPrice] = useState(null)
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     // Fetch price when the component mounts or when hit.collection_handle changes
@@ -205,16 +206,38 @@ const CustomHit = ({ hit }) => {
 
   return (
     <div key={hit.id}>
-      <a href={`/collections/${hit.collection_handle}`}>
+      <a
+        href={`/collections/${hit.collection_handle}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <h2 style={{ padding: "10px" }}>
           {hit.fabric_type} {hit.collection_title}
         </h2>
         {hit.thumbnail && (
-          <img
-            src={hit.thumbnail}
-            alt={hit.title}
-            className="rectangular-image"
-          />
+          <div style={{ position: "relative", textAlign: "center" }}>
+            <img
+              src={hit.thumbnail}
+              alt={hit.title}
+              className="rectangular-image"
+            />
+            {isHovered && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  background: "rgba(0, 0, 0, 0.5)",
+                  padding: "10px",
+                  borderRadius: "10px",
+                  color: "white",
+                }}
+              >
+                <p style={{ fontSize: "15px" }}>{hit.title}</p>
+              </div>
+            )}
+          </div>
         )}
         <p style={{ padding: "10px" }}>{hit.description}</p>
         {price !== null ? (
