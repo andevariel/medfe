@@ -83,12 +83,13 @@ const FacetSearch = () => {
                 )}
                 <br />
 
-                <div className={`bg-gray-100 p-4`}>
+                <div className={`border-bottom p-4`}>
                   <div className="mb-4">Колекція</div>
                   <RefinementList
                     attribute="collection_title"
                     limit={7}
                     showMore
+                    showMoreLimit={100}
                     translations={{
                       submitButtonTitle: "Submit",
                       resetButtonTitle: "Reset",
@@ -103,7 +104,7 @@ const FacetSearch = () => {
                 </div>
                 <br />
 
-                <div className={`bg-gray-100 p-4`}>
+                <div className={`border-bottom p-4`}>
                   <div className="mb-4">Тип Тканини</div>
                   <RefinementList
                     attribute="fabric_type"
@@ -116,12 +117,13 @@ const FacetSearch = () => {
                 </div>
                 <br />
 
-                <div className={`bg-gray-100 p-4`}>
+                <div className={`border-bottom p-4`}>
                   <div className="mb-4">Колір</div>
                   <RefinementList
                     attribute="color"
                     limit={7}
                     showMore
+                    showMoreLimit={100}
                     translations={{
                       submitButtonTitle: "Submit",
                       resetButtonTitle: "Reset",
@@ -132,6 +134,19 @@ const FacetSearch = () => {
                           : "Більше кольорів"
                       },
                     }}
+                  />
+                </div>
+                <br />
+
+                <div className={`border-bottom p-4`}>
+                  <div className="mb-4">Тип дизайну</div>
+                  <RefinementList
+                    attribute="collection_design"
+                    translations={{ showMore: "Показати більше" }}
+                    defaultRefinement={facetFilters.fabric_type || []}
+                    onRefine={(values) =>
+                      handleFacetChange("fabric_type", values)
+                    }
                   />
                 </div>
                 <br />
@@ -208,9 +223,16 @@ const CustomHit = ({ hit }) => {
           <span className="font-semibold">Завантаження ціни...</span>
         )}
       </a>
+      <div className="mb-2"></div>
       <a href={`/products/${hit.handle}`}>
-        <button className="flex items-center text-large-regular border-b border-current gap-x-4 py-2 transition-all duration-300 group hover:pl-4 hover:pr-1">
+        <button className="w-full uppercase flex items-center justify-center min-h-[50px] px-5 py-[10px] text-small-regular border transition-colors duration-200 disabled:opacity-50 text-white bg-gray-900 border-gray-900 hover:bg-gray-800 hover:text-white disabled:hover:bg-gray-900 disabled:hover:text-white">
           Купити
+        </button>
+      </a>
+      <div className="mb-2"></div>
+      <a href={`/collections/${hit.collection_handle}`}>
+        <button className="w-full uppercase flex items-center justify-center min-h-[50px] px-5 py-[10px] text-small-regular border transition-colors duration-200 disabled:opacity-50 text-gray-900 bg-white border-gray-900 hover:bg-gray-100 hover:text-gray-900 disabled:hover:bg-gray-900 disabled:hover:text-white">
+          Дізнатися більше
         </button>
       </a>
     </div>

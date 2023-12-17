@@ -54,7 +54,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: rgba(65, 66, 71, 0.06);
+  background-color: rgba(249 250 251);
   border: none;
   border-radius: 3px;
   color: rgba(33, 36, 61, 0.8);
@@ -134,7 +134,7 @@
 .ais-ClearRefinements > * {
   margin: 0;
   padding: 0 0px;
-  border: 1px solid #1d1b26;
+  border: 1px solid rgba(0, 0, 0, 0.8);
   background: none;
   line-height: 1;
   color: #333;
@@ -143,6 +143,10 @@
   padding: 6px;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.ais-ClearRefinements > *:hover {
+  border: 1px solid #ff8989;
 }
 
 .ais-ClearRefinements-button--disabled {
@@ -219,6 +223,19 @@
 
 .rectangular-image:hover {
   transform: scale(
-    1.02
+    1.03
   ); /* Scale the image to 110% on hover (adjust as needed) */
+}
+
+.border-bottom {
+  position: relative;
+}
+
+.border-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4%; /* Adjust this value to control the starting point of the border */
+  width: 96%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
