@@ -83,7 +83,7 @@ const FacetSearch = () => {
             {isMobile && (
               <div className="text-center mb-4">
                 <button onClick={toggleFilters}>
-                  {showFilters ? "Hide Filters" : "Show Filters"}
+                  {showFilters ? "Приховати фільтри" : "Показати фільтри"}
                 </button>
               </div>
             )}
