@@ -296,7 +296,10 @@ const CustomHit = ({ hit }) => {
           {hit.fabric_type} {hit.collection_title}
         </h2>
         {hit.thumbnail && (
-          <div style={{ position: "relative", textAlign: "center" }}>
+          <div
+            className="rectangular-image-container"
+            style={{ position: "relative", textAlign: "center" }}
+          >
             <img
               src={hit.thumbnail}
               alt={hit.title}
