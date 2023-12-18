@@ -27,7 +27,9 @@ export default class SimpleSlider extends Component {
     return (
       <div>
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-base-regular text-gray-600 mb-6">Акції</span>
+          <span className="text-base-regular text-gray-600 mb-6">
+            Найкращі пропозиції інтернет-магазину
+          </span>
           <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
             Розпродаж Кіото
           </p>
