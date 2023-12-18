@@ -5,6 +5,7 @@ import {
   SearchBox,
   RefinementList,
   InfiniteHits,
+  SortBy,
 } from "react-instantsearch"
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch"
 

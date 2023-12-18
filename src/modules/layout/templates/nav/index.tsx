@@ -82,7 +82,8 @@ const Nav = () => {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
               <Link href="/account">
-                <p className="text-sm">Вхід</p>
+                {/* <p className="text-sm">Вхід</p> */}
+                Вхід
               </Link>
             </div>
             <CartDropdown />

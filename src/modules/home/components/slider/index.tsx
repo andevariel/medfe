@@ -25,8 +25,8 @@ export default class SimpleSlider extends Component {
       autoplaySpeed: 3000, // Set the autoplay speed in milliseconds (e.g., 3000ms or 3s)
     }
     return (
-      <div>
-        <div className="flex flex-col items-center text-center mb-16">
+      <div className="content-container py-6">
+        <div className="flex flex-col items-center text-center mb-8">
           <span className="text-base-regular text-gray-600 mb-6">
             Найкращі пропозиції інтернет-магазину
           </span>

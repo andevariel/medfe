@@ -35,7 +35,7 @@ export default class SimpleSlider extends Component {
             }}
           >
             <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
-              <div className="flex flex-col items-center text-center mb-16">
+              <div className="flex flex-col items-center text-center mb-8">
                 <span className="text-base-regular text-gray-600 mb-6">
                   Найкращі колекції
                 </span>
@@ -106,7 +106,7 @@ export default class SimpleSlider extends Component {
             }}
           >
             <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
-              <div className="flex flex-col items-center text-center mb-16">
+              <div className="flex flex-col items-center text-center mb-8">
                 <span className="text-base-regular text-gray-600 mb-6">
                   Найкращі колекції
                 </span>

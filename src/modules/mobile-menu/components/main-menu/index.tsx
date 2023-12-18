@@ -67,7 +67,7 @@ const MainMenu = () => {
                   onClick={close}
                 >
                   <span className="sr-only">Перейти до магазину</span>
-                  <span>Магазин</span>
+                  <span>Каталог</span>
                   <ChevronDown className="-rotate-90" />
                 </button>
               </Link>
@@ -105,7 +105,9 @@ const MainMenu = () => {
                     className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
                     onClick={close}
                   >
-                    <span className="sr-only">Перейдіть на сторінку входу в обліковий запис.</span>
+                    <span className="sr-only">
+                      Перейдіть на сторінку входу в обліковий запис.
+                    </span>
                     <span className="normal-case">Увійти</span>
                     <ChevronDown className="-rotate-90" />
                   </button>
@@ -119,7 +121,9 @@ const MainMenu = () => {
                     className="flex items-center justify-between border-b border-gray-200 py-2 w-full"
                     onClick={close}
                   >
-                    <span className="sr-only">Перейдіть на сторінку облікового запису.</span>
+                    <span className="sr-only">
+                      Перейдіть на сторінку облікового запису.
+                    </span>
                     <span className="normal-case">{customer.email}</span>
                     <ChevronDown className="-rotate-90" />
                   </button>
@@ -133,12 +137,12 @@ const MainMenu = () => {
                 onClick={setScreenCountry}
               >
                 <span className="sr-only">
-                Клацніть, щоб вибрати країну доставки.
+                  Клацніть, щоб вибрати країну доставки.
                 </span>
                 <div className="flex items-center gap-x-2">
                   <ReactCountryFlag countryCode={countryCode || "us"} svg />
                   <span className="normal-case">
-                  Доставка до{" "}
+                    Доставка до{" "}
                     {countries?.find((c) => c.country === countryCode)?.label}
                   </span>
                 </div>

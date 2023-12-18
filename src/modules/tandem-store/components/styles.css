@@ -232,7 +232,7 @@
 
 .rectangular-image:hover {
   transform: scale(
-    1.06
+    1.03
   ); /* Scale the image to 110% on hover (adjust as needed) */
 }
 

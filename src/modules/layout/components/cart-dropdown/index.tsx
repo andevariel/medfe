@@ -22,7 +22,8 @@ const CartDropdown = () => {
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <Link href="/cart">
-            <p className="text-sm">{`Кошик (${totalItems})`}</p>
+            {/* <p className="text-sm">{`Кошик (${totalItems})`}</p> */}
+            {`Кошик (${totalItems})`}
           </Link>
         </Popover.Button>
         <Transition
