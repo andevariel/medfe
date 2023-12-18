@@ -8,6 +8,8 @@ import {
 } from "react-instantsearch"
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch"
 
+import BestSellers from "@modules/home/components/bestsellers"
+
 const endpoint =
   process.env.NEXT_PUBLIC_SEARCH_ENDPOINT || "http://localhost:7700"
 const apiKey = process.env.NEXT_PUBLIC_SEARCH_API_KEY || "1234567Am"
@@ -252,6 +254,7 @@ const FacetSearch = () => {
           </div>
         </div>
       </InstantSearch>
+      <BestSellers />
     </div>
   )
 }
@@ -318,8 +321,12 @@ const CustomHit = ({ hit }) => {
         )}
         <p style={{ padding: "6px" }}>{hit.description}</p>
         <div style={{ display: "flex", alignItems: "center", padding: "6px" }}>
-          <img src="drapery.png" alt="Slide 1" className="fabric-icon" />
-          <img src="upholstery.png" alt="Slide 1" className="fabric-icon" />
+          <img src="drapery.png" alt="Штори" className="fabric-icon" />
+          <img
+            src="upholstery.png"
+            alt="Оббивка (для меблів)"
+            className="fabric-icon"
+          />
           {/* <img src="FG-icons_PETS.png" alt="Slide 1" className="fabric-icon" /> */}
         </div>
         {price !== null ? (

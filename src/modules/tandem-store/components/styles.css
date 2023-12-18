@@ -247,3 +247,10 @@
 
 .rectangular.text {
 }
+
+.center-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Set the height as needed */
+}
