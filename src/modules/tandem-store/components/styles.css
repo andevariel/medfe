@@ -163,6 +163,10 @@
 }
 
 .ais-InfiniteHits-loadMore {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 1px solid #ff8989;
+  padding: 6px;
 }
 
 .ais-InfiniteHits-loadMore[disabled] {
