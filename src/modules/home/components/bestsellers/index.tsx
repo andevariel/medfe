@@ -46,7 +46,7 @@ export default class SimpleSlider extends Component {
               <div className="-m-1 flex flex-wrap md:-m-2">
                 {/* Big Image on the Left */}
                 <div className="w-full md:w-1/2 p-1 md:p-4">
-                  <a href="/collections/twice">
+                  <a href="/collections/warlock">
                     <img
                       alt="gallery"
                       className="block h-full w-full rounded-2xl object-cover object-center"
@@ -129,7 +129,7 @@ export default class SimpleSlider extends Component {
                 {/* Four Boxes on the Right */}
                 <div className="w-full md:w-1/2 flex flex-wrap">
                   <div className="w-1/2 p-1 md:p-4">
-                    <a href="/collections/warlock">
+                    <a href="/collections/twice">
                       <img
                         alt="gallery"
                         className="block h-full w-full rounded-2xl object-cover object-center"
@@ -138,7 +138,7 @@ export default class SimpleSlider extends Component {
                     </a>
                   </div>
                   <div className="w-1/2 p-1 md:p-4">
-                    <a href="/collections/warlock">
+                    <a href="/collections/twice">
                       <img
                         alt="gallery"
                         className="block h-full w-full rounded-2xl object-cover object-center"
@@ -147,7 +147,7 @@ export default class SimpleSlider extends Component {
                     </a>
                   </div>
                   <div className="w-1/2 p-1 md:p-4">
-                    <a href="/collections/warlock">
+                    <a href="/collections/twice">
                       <img
                         alt="gallery"
                         className="block h-full w-full rounded-2xl object-cover object-center"
@@ -156,7 +156,7 @@ export default class SimpleSlider extends Component {
                     </a>
                   </div>
                   <div className="w-1/2 p-1 md:p-4">
-                    <a href="/collections/warlock">
+                    <a href="/collections/twice">
                       <img
                         alt="gallery"
                         className="block h-full w-full rounded-2xl object-cover object-center"
