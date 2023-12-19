@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | Тканина для меблів та штор`,
+    title: `${product.title} | Тканина для меблів, штор, портьєр`,
     description: `${product.title} - ${product.description}`,
     openGraph: {
       title: `${product.title} | Tandem Textile`,
