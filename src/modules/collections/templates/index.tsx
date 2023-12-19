@@ -59,14 +59,21 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
   return (
     <div className="content-container py-6">
       <div className="mb-8 text-2xl-semi">
-        <h1>{collection.title}</h1>
+        <h1>
+          {collection.metadata?.fabric_type} {collection.title}
+        </h1>
       </div>
-      <div
-        className="py-16 flex justify-center items-center text-base-regular mt-2 text-gray-700"
-        ref={ref}
-      >
-        {collection.metadata?.description}
-      </div>
+
+      {collection.metadata?.description ? (
+        <div
+          className="py-8 flex justify-center items-center text-base-regular mt-2 text-gray-700"
+          ref={ref}
+        >
+          {collection.metadata?.description}
+        </div>
+      ) : null}
+
+      <h3 className="p-8">Виберіть дизайну в колекції</h3>
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>

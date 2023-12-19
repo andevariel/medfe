@@ -15,7 +15,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Інформація про продукт",
+        label: "Інформація про тканину",
         component: <ProductInfoTab product={product} />,
       },
       {
