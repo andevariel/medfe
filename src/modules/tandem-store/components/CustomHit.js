@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 
 const backendUrl =
   process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"
-const brubackendUrl = process.env.brubackendUrl || "http://localhost:3000"
+const brubackendUrl =
+  process.env.NEXT_PUBLIC_BRUBACKENDURL || "http://localhost:3000"
 const bearerToken = process.env.bearerToken || "your_actual_bearer_token"
 
 function checkTandem() {
