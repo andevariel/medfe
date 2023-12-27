@@ -73,7 +73,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
         </div>
       ) : null}
 
-      <h3 className="p-8">Виберіть дизайну в колекції</h3>
+      <h3 className="p-8">Виберіть колір {collection.title}</h3>
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>

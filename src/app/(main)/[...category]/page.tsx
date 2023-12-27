@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = product_categories[0]
 
   return {
-    title: `${category.name} | Tandem Textile`,
-    description: `${category.name} категорія`,
+    title: `${category?.name} | Tandem Textile`,
+    description: `${category?.name} категорія`,
   }
 }
 
