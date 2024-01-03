@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${collection.title} | ${collection.metadata.fabric_type} Тканина для меблів, штор, портьєр`,
+    title: `${collection.metadata.fabric_type} ${collection.title} | тканина для штор та портьер з Бельгії та Італії в Києві`,
     description: `${collection.metadata.fabric_type} ${collection.title}`,
   }
 }

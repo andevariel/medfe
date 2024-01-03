@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, CSSProperties } from "react"
 import styles from "./styles.css"
 import { Dialog } from "./Dialog"
 import { CustomCurrentRefinements } from "./CustomCurrentRefinements"
@@ -62,6 +62,10 @@ const FacetSearch = () => {
 
   return (
     <div className="content-container py-6">
+      <div class="flex items-center justify-center">
+        <h1 class="text-xl p-4">Каталог меблевої та шторної тканини</h1>
+      </div>
+      <br></br>
       <InstantSearch
         indexName="products"
         searchClient={searchClient}
@@ -160,6 +164,14 @@ const FacetSearch = () => {
                   />
                 </div>
                 <br />
+
+                <div className={`border-bottom p-4`}>
+                  <div className="mb-4">Колір 2024 року персиковий пух</div>
+                  <img
+                    src="/bestsellers/pantone-color-chip-13-1023-tcx.webp"
+                    alt="Колір 2024 року. Цього разу ним став Pantone 13-1023 Peach Fuzz (персиковий пух)."
+                  />
+                </div>
               </div>
             </Dialog>
           </div>

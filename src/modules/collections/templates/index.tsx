@@ -60,7 +60,9 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
     <div className="content-container py-6">
       <div className="mb-8 text-2xl-semi">
         <h1>
-          {collection.metadata?.fabric_type} {collection.title}
+          {collection.metadata?.fabric_type} {collection.title} (
+          {collection.handle?.charAt(0).toUpperCase()}
+          {collection.handle?.slice(1)})
         </h1>
       </div>
 
@@ -69,7 +71,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
           className="py-8 flex justify-center items-center text-base-regular mt-2 text-gray-700"
           ref={ref}
         >
-          {collection.metadata?.description}
+          {collection.metadata.description}
         </div>
       ) : null}
 

@@ -67,7 +67,7 @@ const MainMenu = () => {
                   onClick={close}
                 >
                   <span className="sr-only">Перейти до магазину</span>
-                  <span>Каталог</span>
+                  <span>Каталог тканин</span>
                   <ChevronDown className="-rotate-90" />
                 </button>
               </Link>
