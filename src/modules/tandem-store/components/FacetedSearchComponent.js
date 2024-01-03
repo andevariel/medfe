@@ -26,6 +26,16 @@ const FacetSearch = () => {
   const [showDiv1, setShowDiv1] = useState(true)
   const [showDiv2, setShowDiv2] = useState(true)
 
+  const initialText =
+    "Тканини для меблів від Танем Текстиль отримали сертифікат OEKO-TEX 100. OEKO-TEX® STANDARD 100 - це один із найвідоміших у світі знаків якості для текстилю, який пройшов тестування на шкідливі речовини. Він гарантує довіру споживачів та високий рівень безпеки продукції."
+
+  const [showFullText, setShowFullText] = useState(false)
+  const textToShow = showFullText ? initialText : initialText.slice(0, 70)
+
+  const toggleText = () => {
+    setShowFullText(!showFullText)
+  }
+
   const handleDiv1Close = () => {
     setShowDiv1(false)
   }
@@ -63,7 +73,7 @@ const FacetSearch = () => {
   return (
     <div className="content-container py-6">
       <div class="flex items-center justify-center">
-        <h1 class="text-xl p-4">Каталог меблевої та шторної тканини</h1>
+        <h1 class="text-xl">Каталог меблевої та шторної тканини</h1>
       </div>
       <br></br>
       <InstantSearch
@@ -166,12 +176,37 @@ const FacetSearch = () => {
                 <br />
 
                 <div className={`border-bottom p-4`}>
-                  <div className="mb-4">Колір 2024 року персиковий пух</div>
-                  <img
-                    src="/bestsellers/pantone-color-chip-13-1023-tcx.webp"
-                    alt="Колір 2024 року. Цього разу ним став Pantone 13-1023 Peach Fuzz (персиковий пух)."
-                  />
+                  <div className="mb-4">
+                    Міжнародні стандарти якості наших тканин
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      padding: "6px",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <img
+                      src="standard100.svg"
+                      alt="Логотип OEKO-TEX® STANDARD 100"
+                      className="fabric-icon-l"
+                    />
+                    <p className="text-sm">
+                      {textToShow}
+                      {!showFullText && (
+                        <span
+                          style={{ cursor: "pointer" }}
+                          onClick={toggleText}
+                        >
+                          ... далі
+                        </span>
+                      )}
+                    </p>
+                    {/* <img src="FG-icons_PETS.png" alt="Slide 1" className="fabric-icon" /> */}
+                  </div>
                 </div>
+                <br />
               </div>
             </Dialog>
           </div>
@@ -219,15 +254,26 @@ const FacetSearch = () => {
                   X
                 </button>
                 <p className="text-sm">
-                  Тканини для меблів від Танем Текстиль отримали сертифікат
-                  OEKO-TEX 100.<br></br> OEKO-TEX® STANDARD 100 - це один із
-                  найвідоміших у світі знаків якості для текстилю, який пройшов
-                  тестування на шкідливі речовини. Він гарантує довіру
-                  споживачів та високий рівень безпеки продукції.
+                  Наші універсальні тканини Fibre Guard, виготовлені за
+                  інноваційною технологією Stain Free, завдяки якій тканина
+                  набуває дивовижних властивостей відштовхування бруду і води.
+                  Stain Free - це процес передачі поліакриламідного гелю методом
+                  електрофорезу в структуру тканини. Молекули цього гелю
+                  проникають в кожну мембрану, після чого фіксуються
+                  ультрафіолетовим випромінюванням. Завдяки цьому процесу гель
+                  "зростає" з тканиною і стає її невід'ємною частиною. При
+                  такому методі виготовлення тканина не втрачає своїх
+                  властивостей протягом багатьох років. Тканини Fibre Guard не
+                  лише легкі в догляді, довговічні і приємні на дотик, але й
+                  екологічно чисті, адже при їх виробництві не залишається
+                  токсичних або небезпечних органічних речовин. Всі тканини
+                  мають сертифікат OEKO-TEX STANDART 100, що підтверджує їх
+                  безпеку. Також вони проходять всі обов'язкові механічні тести
+                  в незалежній лабораторії LABOTEX і мають відповідні
+                  сертифікати.
                 </p>
               </div>
             )}
-
             {showDiv2 && (
               <div
                 className="mb-4"

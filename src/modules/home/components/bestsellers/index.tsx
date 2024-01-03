@@ -37,7 +37,9 @@ export default class SimpleSlider extends Component {
             <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
               <div className="flex flex-col items-center text-center mb-8">
                 <span className="text-base-regular text-gray-600 mb-6">
-                  Найкращі колекції
+                  Велюр Варлок – це витончене поєднання сучасного дизайну та
+                  класичного комфорту, яке перетворить ваш простір у вишукане
+                  місце відпочинку та стилю.
                 </span>
                 <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
                   Бестселер Варлок
@@ -108,7 +110,8 @@ export default class SimpleSlider extends Component {
             <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
               <div className="flex flex-col items-center text-center mb-8">
                 <span className="text-base-regular text-gray-600 mb-6">
-                  Найкращі колекції
+                  Тканина Твайс імітує натуральну замшу з неймовірною точністю,
+                  даруючи вашому приміщенню вишуканий вигляд та розкіш.
                 </span>
                 <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
                   Бестселер Твайс

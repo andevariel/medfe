@@ -162,11 +162,16 @@ export const CustomHit = ({ hit }) => {
           </div>
         )}
         <p style={{ padding: "6px" }}>{hit.description}</p>
+        <p className="text-sm">За призначенням тканина:</p>
         <div style={{ display: "flex", alignItems: "center", padding: "6px" }}>
-          <img src="drapery.png" alt="Штори" className="fabric-icon" />
+          <img
+            src="drapery.png"
+            alt="За призначенням тканина для портьєр (для штор)"
+            className="fabric-icon"
+          />
           <img
             src="upholstery.png"
-            alt="Оббивка (для меблів)"
+            alt="За призначенням тканина для оббивки (для меблів)"
             className="fabric-icon"
           />
           {/* <img src="FG-icons_PETS.png" alt="Slide 1" className="fabric-icon" /> */}

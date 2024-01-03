@@ -241,7 +241,12 @@
 
 .fabric-icon {
   width: 36px; /* Adjust the width as needed */
-  margin-right: 6px;
+  margin-right: 4px;
+}
+
+.fabric-icon-l {
+  width: 124px; /* Adjust the width as needed */
+  margin: 6px;
 }
 
 .border-bottom {
